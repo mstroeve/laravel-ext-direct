@@ -28,7 +28,7 @@ class ExtDirectServiceProvider extends ServiceProvider {
 	 */
 	public function register()
 	{
-		$this->app->singleton(ExtDirect::class, function($app)
+		$this->app['ext-direct'] = $this->app->share(function($app)
 		{
 		    return new ExtDirect;
 		});
